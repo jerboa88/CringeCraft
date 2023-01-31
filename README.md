@@ -1,76 +1,83 @@
-<!-- DELETE THIS IF CREATING FROM TEMPLATE -->
-### Badges for Different Project Types
-
-|	Project Type											| Badge																																																																												|
-|	---------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|	Android App:									| ![](https://img.shields.io/badge/type-Android_App-cddc39.svg "Project type")																																								|
-|	Browser Extension:						| ![](https://img.shields.io/badge/type-Extension-ffc107.svg "Project type")																																									|
-|	CLI App:											| ![](https://img.shields.io/badge/type-CLI_App-f44336.svg "Project type")																																										|
-|	JS Library / Node.js Module:	| ![](https://img.shields.io/badge/type-JS_Library-4caf50.svg "Project type") ![](https://img.shields.io/badge/type-Node.js_Module-4caf50.svg "Project type")	|
-|	Markdown:											| ![](https://img.shields.io/badge/type-Markdown-9c27b0.svg "Project type")																																										|
-|	Website / Web App:						| ![](https://img.shields.io/badge/type-Website-ff5722.svg "Project type") ![](https://img.shields.io/badge/type-Web_App-ff5722.svg "Project type")						|
-|	Other / GIMP Plugin						|	![](https://img.shields.io/badge/type-Other-2196f3.svg "Project type") ![](https://img.shields.io/badge/type-GIMP_Plugin-2196f3.svg "Project type")					|
-
-
----
-
-
 <!-- Project Header -->
-<div align="center"> 
-  <img class="projectLogo" src="https://via.placeholder.com/256.jpg" alt="Project logo" title="Project logo" width="256">
+<div align="center">
+  <img class="projectLogo" src="config/container/logo.png" alt="Project logo" title="Project logo" width="256">
 
-  <h1 class="projectName">PROJECT NAME</h1>
+  <h1 class="projectName">CringeCraft MC Server</h1>
 
   <p class="projectBadges">
-    <a href="https://unmaintained.tech/">
-      <img src="https://unmaintained.tech/badge.svg" alt="No Maintenance Intended" title="No Maintenance Intended"/>
-    </a>
-    <img src="https://img.shields.io/badge/type-Extension-ffc107.svg" alt="Project type" title="Project type">
-    <img src="https://img.shields.io/github/languages/top/jerboa88/README-Template.svg" alt="Language" title="Language">
-    <a href="https://chrome.google.com/webstore/detail/dark-mode-for-outlook/kjfbefcenipnnpbcbbklcidpjiamlcpl">
-      <img src="https://img.shields.io/chrome-web-store/v/kjfbefcenipnnpbcbbklcidpjiamlcpl.svg" alt="View on the Chrome Web Store" title="View on the Chrome Web Store"/>
-    </a>
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/dark-mode-for-outlook/">
-      <img src="https://img.shields.io/amo/v/dark-mode-for-outlook.svg" alt="View on the Firefox Add-ons Page" title="View on the Firefox Add-ons Page"/>
-    </a>
-    <a href="https://microsoftedge.microsoft.com/addons/detail/ncmfoiokkfipenppipihehpoikhacpep">
-      <img src="https://img.shields.io/badge/dynamic/json?label=edge%20add-on&prefix=v&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fncmfoiokkfipenppipihehpoikhacpep" alt="View on the Edge Add-ons Page" title="View on the Edge Add-ons Page"/>
-    </a>
-    <a href="https://addons.opera.com/en/extensions/details/dark-mode-for-outlook/">
-      <img src="https://img.shields.io/badge/dynamic/json?label=opera%20add-on&color=blue&query=%24.tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fjerboa88%2Fdark-mode-for-outlook%2Freleases%2Flatest" alt="View on the Opera Add-ons Page" title="View on the Opera Add-ons Page"/>
-    </a>
-    <img src="https://img.shields.io/github/repo-size/jerboa88/README-Template.svg" alt="Repository size" title="Repository size">
+    <img src="https://img.shields.io/badge/type-Docker_Container-2196f3.svg" alt="Project type" title="Project type">
+    <img src="https://img.shields.io/github/languages/top/jerboa88/CringeCraft.svg" alt="Language" title="Language">
+    <img src="https://img.shields.io/github/repo-size/jerboa88/CringeCraft.svg" alt="Repository size" title="Repository size">
     <a href="LICENSE">
-      <img src="https://img.shields.io/github/license/jerboa88/README-Template.svg" alt="Project license" title="Project license"/>
+      <img src="https://img.shields.io/github/license/jerboa88/CringeCraft.svg" alt="Project license" title="Project license"/>
     </a>
   </p>
-  
+
   <p class="projectDesc">
-    LONG DESCRIPTION
+    A containerized PaperMC server that can be self-hosted using Docker & playit.gg
   </p>
-  
+
   <br/>
 </div>
 
 
+## About
+> Note that this project is configured for a specific use case so if you want to use this as a template for your own project, you'll need to change some things.
+
+The goal of this project is to create a PaperMC server that is secure, portable, and easy to self-host.
+
+It uses Docker Compose to build upon the awesome [itzg/minecraft-server] image. This allows us to run the server almost anywhere and lets us to deterministically set up the server with all relevant plugins and config. Please refer to that project for further configuration options and setup instructions.
+
+The reverse proxy [playit.gg] is used so we can host the server on any machine without having to worry about port forwarding or DDNS.
+
+
 ## Installation
-...
+1. Install [Docker](https://www.docker.com/)
+3. Download (and unzip) this repo
+4. Make an account and tunnel on [playit.gg](https://playit.gg/).
+   1. Create a new file called `playit_agent_secret.txt` in the `secrets/` directory
+   2. Copy the agent secret and paste it into that file (see [Secrets](#secrets))
+   3. Copy the port number given by and paste it into the `ports` section of `docker-compose.yml` (see [Docker Compose](#docker-compose])
+5. Add all other required secrets to `secrets/` (see [Secrets](#secrets))
+6. Profit!
 
 
 ## Usage
-...
+### Running the server
+Run `docker compose up` in the top-most directory to run the server and `docker compose down` to stop it. You can also use `docker compose up -d` to run the server in the background.
+
+### Configuration
+#### Docker Compose (`docker-compose.yml`)
+Docker Compose allows us to augment an existing Docker image with additional configuration. Everything defined in the `docker-compose.yml` file is used to build the container that runs the server. Since we are using [itzg/minecraft-server], please see that project for more details on the available configuration options. We will only cover the options that are relevant to this project here.
+
+- `ports`: This maps the container's port 25565 to the host's port 22608. This is required so we can connect to the server from the outside world. Make sure that the second (outside) port is set to the port number given by [playit.gg]. The first (inside) port can be left as-is.
+- `volumes`: This mounts our local `./config/minecraft` directory into the container's `/config` directory and mount our local `./config/container` directory into the container's `/container` directory. This is required so we can access our config files from the container. If you rename these directories, you'll need to update the `volumes` section accordingly.
+- `secrets`: This tells Docker where to find our secret files. If you rename the `secrets` directory or the name of files in this directory, you'll need to update the `secrets` section accordingly.
 
 
-## Screenshots
-TABLE TITLE | &#8291;
-:-:|:-:
-![Screenshot 1](screenshots/1.png) | ![Screenshot 2](screenshots/2.png)
-![Screenshot 3](screenshots/3.png) | ![Screenshot 4](screenshots/4.png)
+#### Container Config (`config/container/`)
+This directory contains configuration files for the Docker container created by [itzg/minecraft-server]. Use this directory to store any files that need to be accessed from the container, but don't need to be copied into the server's config directory. For example, we can put the server logo in this directory and with the following line in `docker-compose.yml`, the image will be converted into the correct format and placed in the server's root directory by the image: `ICON: /container/logo.png`.
 
+#### Server Config (`config/minecraft/`)
+This directory contains configuration files for the Minecraft server. Anything you put in this directory will be copied directly into the server's config directory. Note that will overwrite any existing files with the same name that are already in the container.
 
-## Contributing
-Contributions, issues, and forks are welcome but this is a hobby project so don't expect too much from it. [SemVer](http://semver.org/) is used for versioning.
+#### Secrets (`secrets/`)
+Passwords and other sensitive information for the server are stored in the `secrets/` directory. These files are not tracked by git so you'll need to create them yourself when you first set up the project. Do not share these files with anyone.
+
+By default, this project requires the following secret files to be added:
+- `bstats_server_uuid.txt`: The UUID for the server on [bStats]. This is used to track server statistics.
+- `playit_agent_secret.txt`: The secret for the server on [playit.gg]. This is used to authenticate the server with the reverse proxy.
+- `rcon_password.txt`: The password for the RCON server. This is used to remotely control the server. Make sure this is set to something secure.
+
+Each of these files should contain a single line with the relevant information. All of these secrets are loaded in `docker-compose.yml` and used to replace various placeholders in the server config files.
 
 
 ## License
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+The [itzg/minecraft-server] image is fetched at runtime by Docker Compose, but it is licensed under the Apache License 2.0.
+
+
+[itzg/minecraft-server]: https://github.com/itzg/docker-minecraft-server
+[playit.gg]: https://playit.gg/
+[bStats]: https://bstats.org/
