@@ -34,10 +34,10 @@ The reverse proxy [playit.gg] is used so we can host the server on any machine w
 ## Installation
 1. Install [Docker](https://www.docker.com/)
 3. Download (and unzip) this repo
-4. Make an account and tunnel on [playit.gg](https://playit.gg/).
+4. Make an account and tunnel on [playit.gg].
    1. Create a new file called `playit_agent_secret.txt` in the `secrets/` directory
    2. Copy the agent secret and paste it into that file (see [Secrets](#secrets))
-   3. Copy the port number given by and paste it into the `ports` section of `docker-compose.yml` (see [Docker Compose](#docker-compose]))
+   3. Copy the port number given by [playit.gg] and paste it into the `ports` section of `docker-compose.yml` (see [Docker Compose](#docker-compose]))
 5. Add all other required secrets to `secrets/` (see [Secrets](#secrets))
 6. Profit!
 
