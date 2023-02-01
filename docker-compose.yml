@@ -17,23 +17,26 @@ services:
       REPLACE_ENV_VARIABLES: true
       REPLACE_ENV_DURING_SYNC: true
       # The image will run a script to replace instances of these variables with the secret values Docker loaded
-      CFG_PLAYIT_AGENT_SECRET_FILE: /run/secrets/playit_agent_secret
       CFG_BSTATS_SERVER_UUID_FILE: /run/secrets/bstats_server_uuid
+      CFG_PLAYIT_AGENT_SECRET_FILE: /run/secrets/playit_agent_secret
       # This will let Docker set `RCON_PASSWORD` to the value loaded from the secrets file
       RCON_PASSWORD_FILE: /run/secrets/rcon_password
     ports:
       # The proxy expects us to be running on port 22608 so we have to expose it
       - 25565:22608
-    volumes:
-      # Config files in `minecraft` will be copied to the container's `/data` directory
-      - ./config/minecraft:/config:ro
-      # Files in `container` will be mounted so that the image can read them
-      - ./config/container:/container:ro
     restart: unless-stopped
     secrets:
+      - bstats_server_uuid
+      - playit_agent_secret
       - rcon_password
     stdin_open: true
     tty: true
+    volumes:
+      - data-volume:/data:rw
+      # Files in `config/server/` will be copied to the container's `/data` directory
+      - ./config/server:/config:ro
+      # Files in `config/container/` will be mounted so that the image can read them
+      - ./config/container:/container:ro
 secrets:
   bstats_server_uuid:
     file: ./config/secrets/bstats_server_uuid.txt
@@ -41,3 +44,5 @@ secrets:
     file: ./config/secrets/playit_agent_secret.txt
   rcon_password:
     file: ./config/secrets/rcon_password.txt
+volumes:
+  data-volume:
