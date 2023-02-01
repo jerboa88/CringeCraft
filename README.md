@@ -58,7 +58,7 @@ Docker Compose allows us to augment an existing Docker image with additional con
 #### Container Config (`config/container/`)
 This directory contains configuration files for the Docker container created by [itzg/minecraft-server]. Use this directory to store any files that need to be accessed from the container, but don't need to be copied into the server's config directory. For example, we can put the server logo in this directory and with the following line in `docker-compose.yml`, the image will be converted into the correct format and placed in the server's root directory by the image: `ICON: /container/logo.png`.
 
-#### Server Config (`config/minecraft/`)
+#### Server Config (`config/server/`)
 This directory contains configuration files for the Minecraft server. Anything you put in this directory will be copied directly into the server's config directory. Note that will overwrite any existing files with the same name that are already in the container.
 
 #### Secrets (`config/secrets/`)

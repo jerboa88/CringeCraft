@@ -33,9 +33,9 @@ services:
     tty: true
     volumes:
       - data-volume:/data:rw
-      # Config files in `minecraft` will be copied to the container's `/data` directory
-      - ./config/minecraft:/config:ro
-      # Files in `container` will be mounted so that the image can read them
+      # Files in `config/server/` will be copied to the container's `/data` directory
+      - ./config/server:/config:ro
+      # Files in `config/container/` will be mounted so that the image can read them
       - ./config/container:/container:ro
 secrets:
   bstats_server_uuid:
