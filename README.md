@@ -58,11 +58,11 @@ Docker Compose allows us to augment an existing Docker image with additional con
 #### Container Config (`config/container/`)
 This directory contains configuration files for the Docker container created by [itzg/minecraft-server]. Use this directory to store any files that need to be accessed from the container, but don't need to be copied into the server's config directory. For example, we can put the server logo in this directory and with the following line in `docker-compose.yml`, the image will be converted into the correct format and placed in the server's root directory by the image: `ICON: /container/logo.png`.
 
-#### Server Config (`config/minecraft/`)
+#### Server Config (`config/server/`)
 This directory contains configuration files for the Minecraft server. Anything you put in this directory will be copied directly into the server's config directory. Note that will overwrite any existing files with the same name that are already in the container.
 
-#### Secrets (`secrets/`)
-Passwords and other sensitive information for the server are stored in the `secrets/` directory. These files are not tracked by git so you'll need to create them yourself when you first set up the project. Do not share these files with anyone.
+#### Secrets (`config/secrets/`)
+Passwords and other sensitive information for the server are stored in this directory. These files are not tracked by git so you'll need to create them yourself when you first set up the project. Do not share these files with anyone.
 
 By default, this project requires the following secret files to be added:
 - `bstats_server_uuid.txt`: The UUID for the server on [bStats]. This is used to track server statistics.
