@@ -12,7 +12,7 @@
 # - kick: Kicks the player with a link code and requires they link their discord account before they can join.
 # - freeze: Prevents player from moving/interacting/doing commands when they join until they link their discord account.
 # - none: Places no restrictions on players for unlinked accounts.
-link-policy: freeze
+link-policy: kick
 
 # Whether to ignore Discord messages from unlinked members and hide them from Minecraft chat.
 block-unlinked-chat: false
