@@ -1,0 +1,1 @@
+FROM itzg/minecraft-server
