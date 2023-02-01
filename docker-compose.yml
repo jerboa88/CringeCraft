@@ -18,6 +18,14 @@ services:
       REPLACE_ENV_DURING_SYNC: true
       # The image will run a script to replace instances of these variables with the secret values Docker loaded
       CFG_BSTATS_SERVER_UUID_FILE: /run/secrets/bstats_server_uuid
+      CFG_DISCORD_BOT_TOKEN_FILE: /run/secrets/discord_bot_token
+      CFG_DISCORD_SERVER_ID_FILE: /run/secrets/discord_server_id
+      CFG_DISCORD_PRIMARY_CHANNEL_ID_FILE: /run/secrets/discord_primary_channel_id
+      CFG_DISCORD_STAFF_CHANNEL_ID_FILE: /run/secrets/discord_staff_channel_id
+      CFG_DISCORD_CONSOLE_CHANNEL_ID_FILE: /run/secrets/discord_console_channel_id
+      CFG_DISCORD_USER_ROLE_ID_FILE: /run/secrets/discord_user_role_id
+      CFG_DISCORD_ADMIN_ROLE_ID_FILE: /run/secrets/discord_admin_role_id
+      CFG_LUCKPERMS_DB_PASSWORD_FILE: /run/secrets/luckperms_db_password
       CFG_PLAYIT_AGENT_SECRET_FILE: /run/secrets/playit_agent_secret
       # This will let Docker set `RCON_PASSWORD` to the value loaded from the secrets file
       RCON_PASSWORD_FILE: /run/secrets/rcon_password
@@ -27,6 +35,14 @@ services:
     restart: unless-stopped
     secrets:
       - bstats_server_uuid
+      - discord_bot_token
+      - discord_server_id
+      - discord_primary_channel_id
+      - discord_staff_channel_id
+      - discord_console_channel_id
+      - discord_user_role_id
+      - discord_admin_role_id
+      - luckperms_db_password
       - playit_agent_secret
       - rcon_password
     stdin_open: true
@@ -40,6 +56,22 @@ services:
 secrets:
   bstats_server_uuid:
     file: ./config/secrets/bstats_server_uuid.txt
+  discord_bot_token:
+    file: ./config/secrets/discord_bot_token.txt
+  discord_server_id:
+    file: ./config/secrets/discord_server_id.txt
+  discord_primary_channel_id:
+    file: ./config/secrets/discord_primary_channel_id.txt
+  discord_staff_channel_id:
+    file: ./config/secrets/discord_staff_channel_id.txt
+  discord_console_channel_id:
+    file: ./config/secrets/discord_console_channel_id.txt
+  discord_user_role_id:
+    file: ./config/secrets/discord_user_role_id.txt
+  discord_admin_role_id:
+    file: ./config/secrets/discord_admin_role_id.txt
+  luckperms_db_password:
+    file: ./config/secrets/luckperms_db_password.txt
   playit_agent_secret:
     file: ./config/secrets/playit_agent_secret.txt
   rcon_password:
