@@ -40,9 +40,25 @@ services:
       - ./config/container:/container:ro
     restart: unless-stopped
     secrets:
+      - bstats_server_uuid
+      - discord_bot_token
+      - discord_server_id
+      - discord_primary_channel_id
+      - discord_staff_channel_id
+      - discord_console_channel_id
+      - discord_user_role_id
+      - discord_admin_role_id
+      - luckperms_db_password
+      - playit_agent_secret
       - rcon_password
     stdin_open: true
     tty: true
+    volumes:
+      - data-volume:/data:rw
+      # Config files in `minecraft` will be copied to the container's `/data` directory
+      - ./config/minecraft:/config:ro
+      # Files in `container` will be mounted so that the image can read them
+      - ./config/container:/container:ro
 secrets:
   bstats_server_uuid:
     file: ./config/secrets/bstats_server_uuid.txt
