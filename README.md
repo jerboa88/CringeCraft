@@ -61,8 +61,8 @@ This directory contains configuration files for the Docker container created by 
 #### Server Config (`config/minecraft/`)
 This directory contains configuration files for the Minecraft server. Anything you put in this directory will be copied directly into the server's config directory. Note that will overwrite any existing files with the same name that are already in the container.
 
-#### Secrets (`secrets/`)
-Passwords and other sensitive information for the server are stored in the `secrets/` directory. These files are not tracked by git so you'll need to create them yourself when you first set up the project. Do not share these files with anyone.
+#### Secrets (`config/secrets/`)
+Passwords and other sensitive information for the server are stored in this directory. These files are not tracked by git so you'll need to create them yourself when you first set up the project. Do not share these files with anyone.
 
 By default, this project requires the following secret files to be added:
 - `bstats_server_uuid.txt`: The UUID for the server on [bStats]. This is used to track server statistics.
