@@ -103,7 +103,7 @@ data:
 
   # Credentials for the database.
   username: root
-  password: ''
+  password: '${CFG_LUCKPERMS_DB_PASSWORD}'
 
   # These settings apply to the MySQL connection pool.
   # - The default values will be suitable for the majority of users.

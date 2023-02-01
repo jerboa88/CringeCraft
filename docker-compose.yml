@@ -25,6 +25,7 @@ services:
       CFG_DISCORD_CONSOLE_CHANNEL_ID_FILE: /run/secrets/discord_console_channel_id
       CFG_DISCORD_USER_ROLE_ID_FILE: /run/secrets/discord_user_role_id
       CFG_DISCORD_ADMIN_ROLE_ID_FILE: /run/secrets/discord_admin_role_id
+      CFG_LUCKPERMS_DB_PASSWORD_FILE: /run/secrets/luckperms_db_password
       CFG_PLAYIT_AGENT_SECRET_FILE: /run/secrets/playit_agent_secret
 
       # This will let Docker set `RCON_PASSWORD` to the value loaded from the secrets file
@@ -59,6 +60,8 @@ secrets:
     file: ./config/secrets/discord_user_role_id.txt
   discord_admin_role_id:
     file: ./config/secrets/discord_admin_role_id.txt
+  luckperms_db_password:
+    file: ./config/secrets/luckperms_db_password.txt
   playit_agent_secret:
     file: ./config/secrets/playit_agent_secret.txt
   rcon_password:
