@@ -22,11 +22,9 @@
 
 
 ## About
-> Note that this project is configured for a specific use case so if you want to use this as a template for your own project, you'll need to change some things.
-
 The goal of this project is to create a PaperMC server that is secure, portable, and easy to self-host.
 
-It uses Docker Compose to build upon the awesome [itzg/minecraft-server] image. This allows us to run the server almost anywhere and lets us to deterministically set up the server with all relevant plugins and config. Please refer to that project for further configuration options and setup instructions.
+It uses Docker Compose to build upon the awesome [itzg/minecraft-server] image. This allows us to run the server almost anywhere and lets us deterministically set up the server with all relevant plugins and config. Please refer to that project for further configuration options and setup instructions.
 
 The reverse proxy [playit.gg] is used so we can host the server on any machine without having to worry about port forwarding or DDNS.
 
