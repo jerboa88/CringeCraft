@@ -1,7 +1,5 @@
-https://github.com/playit-cloud/playit-minecraft-plugin/releases/latest/download/playit-minecraft-plugin.jar
+https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/spigot/build/libs/Geyser-Spigot.jar
+https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/spigot/build/libs/floodgate-spigot.jar
 https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
-https://download.luckperms.net/1470/bukkit/loader/LuckPerms-Bukkit-5.4.60.jar
-https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsX-2.20.0-dev+40-996285c.jar
-https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXDiscord-2.20.0-dev+40-996285c.jar
-https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXDiscordLink-2.20.0-dev+40-996285c.jar
-https://github.com/TechFortress/GriefPrevention/releases/download/16.18/GriefPrevention.jar
+# https://download.luckperms.net/1470/bukkit/loader/LuckPerms-Bukkit-5.4.60.jar
+# https://github.com/TechFortress/GriefPrevention/releases/download/16.18/GriefPrevention.jar
