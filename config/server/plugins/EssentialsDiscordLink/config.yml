@@ -18,7 +18,7 @@ link-policy: kick
 block-unlinked-chat: false
 
 # Whether someone's Minecraft account should be unlinked when they leave the Discord server.
-unlink-on-leave: true
+unlink-on-leave: false
 
 # Whether linked player's incoming mail should be DM'd to them on Discord.
 relay-mail: true
@@ -29,7 +29,7 @@ relay-mail: true
 role-sync:
   # Whether EssentialsX DiscordLink should remove synced Discord roles from players who unlink their Minecraft account,
   # leave the Discord server, or who no longer have the groups that awarded them the role in the first place.
-  remove-roles: true
+  remove-roles: false
   # Whether EssentialsX DiscordLink should remove synced Minecraft groups from players who unlink their Discord account,
   # or who no longer have the Discord roles that awarded them the group in the first place.
   remove-groups: true
@@ -42,11 +42,11 @@ role-sync:
   # Players in the following groups listed here will receive the corresponding role ID on discord when they link
   # their Minecraft account to their Discord account.
   groups:
-    pro-gamer: ${CFG_DISCORD_USER_ROLE_ID}
-    epic-gamer: ${CFG_DISCORD_ADMIN_ROLE_ID}
+    Pro Gamer: ${CFG_DISCORD_USER_ROLE_ID}
+    Epic Gamer: ${CFG_DISCORD_ADMIN_ROLE_ID}
   # Discord role ID to Minecraft group synchronization.
   # Users with the following roles listed here will receive the corresponding group in Minecraft when they link
   # their Discord account to their Minecraft account.
   roles:
-    ${CFG_DISCORD_USER_ROLE_ID}: pro-gamer
-    ${CFG_DISCORD_ADMIN_ROLE_ID}: epic-gamer
+    ${CFG_DISCORD_USER_ROLE_ID}: Pro Gamer
+    ${CFG_DISCORD_ADMIN_ROLE_ID}: Epic Gamer
