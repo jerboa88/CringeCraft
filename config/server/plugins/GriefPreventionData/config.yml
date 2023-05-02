@@ -16,7 +16,7 @@ GriefPrevention:
     PreventButtonsSwitches: true
     LockWoodenDoors: false
     LockTrapDoors: false
-    LockFenceGates: true
+    LockFenceGates: false
     EnderPearlsRequireAccessTrust: true
     RaidTriggersRequireBuildTrust: true
     ProtectHorses: true
@@ -33,16 +33,16 @@ GriefPrevention:
     AutomaticNewPlayerClaimsRadius: 4
     AutomaticNewPlayerClaimsRadiusMinimum: 0
     ExtendIntoGroundDistance: 5
-    MinimumWidth: 5
-    MinimumArea: 100
+    MinimumWidth: 4
+    MinimumArea: 16
     MaximumDepth: -2147483648
     InvestigationTool: STICK
     ModificationTool: GOLDEN_SHOVEL
     Expiration:
-      ChestClaimDays: 7
-      UnusedClaimDays: 14
+      ChestClaimDays: 365
+      UnusedClaimDays: 365
       AllClaims:
-        DaysInactive: 60
+        DaysInactive: 365
         ExceptWhenOwnerHasTotalClaimBlocks: 10000
         ExceptWhenOwnerHasBonusClaimBlocks: 5000
       AutomaticNatureRestoration:
@@ -77,7 +77,7 @@ GriefPrevention:
       world_the_end: true
     ProtectFreshSpawns: true
     PunishLogout: true
-    CombatTimeoutSeconds: 15
+    CombatTimeoutSeconds: 5
     AllowCombatItemDrop: false
     BlockedSlashCommands: /home;/vanish;/spawn;/tpa
     ProtectPlayersInLandClaims:
@@ -97,16 +97,16 @@ GriefPrevention:
     ClaimBlocksSellValue: 0.0
   ProtectItemsDroppedOnDeath:
     PvPWorlds: false
-    NonPvPWorlds: true
+    NonPvPWorlds: false
   BlockLandClaimExplosions: true
   BlockSurfaceCreeperExplosions: true
-  BlockSurfaceOtherExplosions: true
-  LimitSkyTrees: true
+  BlockSurfaceOtherExplosions: false
+  LimitSkyTrees: false
   LimitTreeGrowth: false
-  PistonMovement: CLAIMS_ONLY
+  PistonMovement: EVERYWHERE_SIMPLE
   PistonExplosionSound: true
-  FireSpreads: false
-  FireDestroys: false
+  FireSpreads: true
+  FireDestroys: true
   AdminsGetWhispers: true
   AdminsGetSignNotifications: true
   VisualizationAntiCheatCompatMode: false
@@ -153,8 +153,8 @@ GriefPrevention:
     DoorsOpenDelayInSeconds: 300
     CooldownEndInMinutes: 60
   EndermenMoveBlocks: false
-  SilverfishBreakBlocks: false
-  CreaturesTrampleCrops: false
+  SilverfishBreakBlocks: true
+  CreaturesTrampleCrops: true
   RabbitsEatCrops: true
   HardModeZombiesBreakDoors: false
   Database:
