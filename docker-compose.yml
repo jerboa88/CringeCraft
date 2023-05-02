@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  mc:
+  mcserver:
     build: .
     environment:
       EULA: true
@@ -26,12 +26,14 @@ services:
       CFG_DISCORD_USER_ROLE_ID_FILE: /run/secrets/discord_user_role_id
       CFG_DISCORD_ADMIN_ROLE_ID_FILE: /run/secrets/discord_admin_role_id
       CFG_LUCKPERMS_DB_PASSWORD_FILE: /run/secrets/luckperms_db_password
-      CFG_PLAYIT_AGENT_SECRET_FILE: /run/secrets/playit_agent_secret
       # This will let Docker set `RCON_PASSWORD` to the value loaded from the secrets file
       RCON_PASSWORD_FILE: /run/secrets/rcon_password
+    networks:
+      cringenet:
+        ipv4_address: 10.0.0.10
     ports:
-      # The proxy expects us to be running on port 22608 so we have to expose it
-      - 25565:22608
+      # Required so we can connect to the server locally
+      - 25565:25565
     restart: unless-stopped
     secrets:
       - bstats_server_uuid
@@ -43,16 +45,34 @@ services:
       - discord_user_role_id
       - discord_admin_role_id
       - luckperms_db_password
-      - playit_agent_secret
       - rcon_password
     stdin_open: true
     tty: true
     volumes:
-      - data-volume:/data:rw
+      - mcserver-volume:/data:rw
       # Files in `config/server/` will be copied to the container's `/data` directory
       - ./config/server:/config:ro
       # Files in `config/container/` will be mounted so that the image can read them
       - ./config/container:/container:ro
+  playit:
+    image: playit-image
+    environment:
+      PLAYIT_SECRET_FILE: /run/secrets/playit_agent_secret
+    networks:
+      - cringenet
+    ports:
+      - 44217:44217
+      - 11118:11118
+    restart: unless-stopped
+    secrets:
+      - playit_agent_secret
+    volumes:
+      - playit-volume:/app
+networks:
+  cringenet:
+    ipam:
+      config:
+        - subnet: 10.0.0.10/24
 secrets:
   bstats_server_uuid:
     file: ./config/secrets/bstats_server_uuid.txt
@@ -77,4 +97,6 @@ secrets:
   rcon_password:
     file: ./config/secrets/rcon_password.txt
 volumes:
-  data-volume:
+  mcserver-volume:
+  playit-volume:
+    external: false

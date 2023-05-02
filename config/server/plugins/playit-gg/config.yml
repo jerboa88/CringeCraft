@@ -1,1 +1,0 @@
-agent-secret: ${CFG_PLAYIT_AGENT_SECRET}
