@@ -1,7 +1,7 @@
 https://github.com/playit-cloud/playit-minecraft-plugin/releases/latest/download/playit-minecraft-plugin.jar
 https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
-https://download.luckperms.net/1470/bukkit/loader/LuckPerms-Bukkit-5.4.60.jar
-https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsX-2.20.0-dev+40-996285c.jar
-https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXDiscord-2.20.0-dev+40-996285c.jar
-https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXDiscordLink-2.20.0-dev+40-996285c.jar
-https://github.com/TechFortress/GriefPrevention/releases/download/16.18/GriefPrevention.jar
+https://download.luckperms.net/1491/bukkit/loader/LuckPerms-Bukkit-5.4.79.jar
+https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsX-2.20.0-dev+59-e5b0c4c.jar
+https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXDiscord-2.20.0-dev+59-e5b0c4c.jar
+https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXDiscordLink-2.20.0-dev+59-e5b0c4c.jar
+https://dev.bukkit.org/projects/grief-prevention/files/4433061/download
