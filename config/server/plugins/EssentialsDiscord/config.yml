@@ -115,25 +115,25 @@ console:
 # To disable a message from showing, use 'none' as the channel name.
 message-types:
   # Join messages sent when a player joins the Minecraft server.
-  join: primary
+  join: none
   # Join messages sent when a player joins the Minecraft server for the first time. This type is sent instead of the join type.
   first-join: primary
   # Leave messages sent when a player leaves the Minecraft server.
-  leave: primary
+  leave: none
   # Chat messages sent when a player chats on the Minecraft server.
-  chat: primary
+  chat: none
   # Death messages sent when a player dies on the Minecraft server.
-  death: primary
+  death: none
   # AFK status change messages sent when a player's AFK status changes.
   afk: none
   # Achievement/advancement messages sent when a player is awarded an achievement/advancement.
-  advancement: primary
+  advancement: none
   # Action messages sent when a player runs the /me or /action commands.
-  action: primary
+  action: none
   # Message sent when the server starts up.
-  server-start: primary
+  server-start: none
   # Message sent when the server shuts down.
-  server-stop: primary
+  server-stop: none
   # Message sent when a player is kicked from the Minecraft server.
   kick: staff
   # Message sent when a player's mute state is changed on the Minecraft server.
