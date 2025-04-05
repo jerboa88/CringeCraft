@@ -13,7 +13,7 @@
     </a>
   </p>
 
-  <p class="projectDesc" data-exposition="A containerized Minecraft server that can be self-hosted using Docker and a free reverse proxy called playit.gg. The goal of this project was to create a Minecraft server that is secure, portable, and easy to self-host.">
+  <p class="projectDesc">
     A containerized PaperMC server that can be self-hosted using Docker & playit.gg
   </p>
 
