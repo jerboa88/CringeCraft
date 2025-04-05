@@ -1,0 +1,16 @@
+{
+  "$schema": "https://johng.io/schema/project-metadata.json",
+  "name": "CringeCraft MC Server",
+  "background": "A containerized Minecraft server that can be self-hosted using Docker and a free reverse proxy called playit.gg. The goal of this project was to create a Minecraft server that is secure, portable, and easy to self-host.",
+	"logoPath": "config/container/logo.png",
+	"category": "Container",
+	"subcategory": "Docker",
+  "technologies": [
+		"Docker"
+  ],
+  "schema": {
+    "type": "Software",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any"
+  }
+}
