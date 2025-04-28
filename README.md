@@ -5,7 +5,7 @@
   <h1 class="projectName">CringeCraft MC Server</h1>
 
   <p class="projectBadges">
-    <img src="https://img.shields.io/badge/type-Docker_Container-2196f3.svg" alt="Project type" title="Project type">
+    <img src="https://johng.io/badges/category/Container.svg" alt="Project category" title="Project category">
     <img src="https://img.shields.io/github/languages/top/jerboa88/CringeCraft.svg" alt="Language" title="Language">
     <img src="https://img.shields.io/github/repo-size/jerboa88/CringeCraft.svg" alt="Repository size" title="Repository size">
     <a href="LICENSE">
