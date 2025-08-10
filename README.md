@@ -21,7 +21,7 @@
 </div>
 
 
-## About
+## 👋 About
 The goal of this project is to create a PaperMC server that is secure, portable, and easy to self-host.
 
 It uses Docker Compose to build upon the awesome [itzg/minecraft-server] image. This allows us to run the server almost anywhere and lets us deterministically set up the server with all relevant plugins and config. Please refer to that project for further configuration options and setup instructions.
@@ -29,7 +29,7 @@ It uses Docker Compose to build upon the awesome [itzg/minecraft-server] image. 
 The reverse proxy [playit.gg] is used so we can host the server on any machine without having to worry about port forwarding or DDNS.
 
 
-## Installation
+## 📦 Installation
 1. Install [Docker](https://www.docker.com/)
 3. Download (and unzip) this repo
 4. Make an account and tunnel on [playit.gg].
@@ -40,7 +40,7 @@ The reverse proxy [playit.gg] is used so we can host the server on any machine w
 6. Profit!
 
 
-## Usage
+## 🕹️Usage
 ### Running the server
 Run `docker compose up` in the top-most directory to run the server and `docker compose down` to stop it. You can also use `docker compose up -d` to run the server in the background.
 
@@ -70,7 +70,7 @@ By default, this project requires the following secret files to be added:
 Each of these files should contain a single line with the relevant information. All of these secrets are loaded in `docker-compose.yml` and used to replace various placeholders in the server config files.
 
 
-## License
+## 🧾 License
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 The [itzg/minecraft-server] image is fetched at runtime by Docker Compose, but it is licensed under the Apache License 2.0.
